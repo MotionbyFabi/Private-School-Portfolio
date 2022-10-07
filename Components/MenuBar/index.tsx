@@ -1,18 +1,23 @@
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
-import Logo from "../../public/Apple_logo_black.png";
-import { useAppStore } from "../Apps/layout";
+import Logo from "../../public/github.svg";
+import { useAppStore } from "../Apps/createAppStore";
+
 
 const Index = () => {
-  const appName = useAppStore((state) => state.appName);
+  const appName  = useAppStore((state) => state.appName);
+
   return (
     <>
       <nav className="w-full bg-gray-300 h-10 flex justify-center items-center flex-row space-x-4 pl-5">
         <div className="flex flex-row space-x-4 justify-center items-center place-items-center">
-          <div className="h-4 w-4">
-            <Image src={Logo} alt="logo" layout="responsive" />
+          <div className="h-6 w-6 cursor-pointer">
+            <Link href="https://github.com/MotionbyFabi/Private-School-Portfolio">
+              <Image src={Logo} alt="github Logo" />
+            </Link>
           </div>
-          <h1>{appName}</h1>
+          <h1 className="w-max">{appName}</h1>
         </div>
         <ul className="w-full flex flex-row space-x-4">
           <li>File</li>

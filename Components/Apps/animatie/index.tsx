@@ -1,13 +1,16 @@
 import React from "react";
-import Layout, { useAppStore } from "../layout";
+import Layout from "../layout";
+import { useAppStore } from "../createAppStore";
 
 const Animatie = () => {
-  const name = "Animatie";
-  useAppStore.setState({ appName: name });
-
+  const name = "Animatie"
+  const appName = useAppStore((state) => state.appName);
+  
   return (
-    <Layout title={name}>
-      <h1>Hello</h1>
+    <Layout title={appName}>
+      <div className="w-[854px] rounded-b-lg h-full bg-white">
+        <h1>{appName}</h1>
+      </div>
     </Layout>
   );
 };

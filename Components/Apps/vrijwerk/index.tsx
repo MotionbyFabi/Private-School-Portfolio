@@ -1,13 +1,10 @@
 import React from "react";
 import Layout from "../../layout";
-import { useAppStore } from "../layout";
+
 
 const index = () => {
-  const name = "Vrij Werk";
-  useAppStore.setState({ appName: name });
-
   return (
-    <Layout title={name}>
+    <Layout title="Vrij Werk">
       <h1>Hello</h1>
     </Layout>
   );

@@ -1,11 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import { Tooltip } from "@material-tailwind/react";
-import { useAppStore } from "../Apps/layout";
 import { useRouter } from "next/router";
-import Link from "next/link";
+import { useAppStore } from "../Apps/createAppStore";
 
 const Index = () => {
-  const appName = useAppStore((state) => state.appName);
   const router = useRouter();
   const DockItems = [
     "Animatie",
@@ -15,6 +13,34 @@ const Index = () => {
     "Scripten",
     "Vrij Werk",
   ];
+/*   const [activeApp, setActiveApp] = useState("");
+  console.log(activeApp)
+  useAppStore.setState({ appName: activeApp });
+
+  const handleActiveApp = (app: string) => {
+    switch (app) {
+      case "Animatie":
+        setActiveApp("Animatie");
+      case "Beeld en Geluid":
+        setActiveApp("Beeld en Geluid");
+      case "Grafische Vormgeving":
+        setActiveApp("Grafische Vormgeving");
+      case "Internet Technieken":
+        setActiveApp("Internet Technieken");
+      case "Scripten":
+        setActiveApp("Scripten");
+      case "Vrij Werk":
+        setActiveApp("Vrij Werk");
+        default:
+          setActiveApp("Finder");
+    }
+  }; */
+
+  const [ appName, setAppName ] = useAppStore((state) => [state.appName, state.setAppName]);
+  const handleClick = (DockItem: string) => {
+    setAppName(DockItem)
+  };
+    
 
   return (
     <>
@@ -22,7 +48,7 @@ const Index = () => {
         <nav className=" glass-background flex justify-center items-center flex-row space-x-4 px-5 py-1 ">
           <ul className=" flex flex-row space-x-4">
             {DockItems.map((DockItem) => (
-              <li className="cursor-pointer" key={router.pathname}>
+              <li className="cursor-pointer" onClick={() => handleClick(DockItem)} key={router.pathname}>
                 <Tooltip
                   className="glass-background-tooltip   text-black text-[16px] px-[8px] py-[2px]"
                   animate={{
@@ -50,35 +76,6 @@ const Index = () => {
                 </Tooltip>
               </li>
             ))}
-
-            {/*           <li className="cursor-pointer">
-          <Tooltip className="glass-background   text-black text-[16px] px-[8px] py-[2px]" animate={{
-        mount: { opacity: 1},
-        unmount: { opacity: 0  },
-      }} content={appName}
-      offset={10}>
-          <svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 48 48" width="48px" height="48px"><path fill="#FFA000" d="M40,12H22l-4-4H8c-2.2,0-4,1.8-4,4v8h40v-4C44,13.8,42.2,12,40,12z"/><path fill="#FFCA28" d="M40,12H8c-2.2,0-4,1.8-4,4v20c0,2.2,1.8,4,4,4h32c2.2,0,4-1.8,4-4V16C44,13.8,42.2,12,40,12z"/></svg>
-
-            </Tooltip>
-          </li>
-          <li>
-            <svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 48 48" width="48px" height="48px"><path fill="#FFA000" d="M40,12H22l-4-4H8c-2.2,0-4,1.8-4,4v8h40v-4C44,13.8,42.2,12,40,12z"/><path fill="#FFCA28" d="M40,12H8c-2.2,0-4,1.8-4,4v20c0,2.2,1.8,4,4,4h32c2.2,0,4-1.8,4-4V16C44,13.8,42.2,12,40,12z"/></svg>
-            </li>
-          <li>
-            <svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 48 48" width="48px" height="48px"><path fill="#FFA000" d="M40,12H22l-4-4H8c-2.2,0-4,1.8-4,4v8h40v-4C44,13.8,42.2,12,40,12z"/><path fill="#FFCA28" d="M40,12H8c-2.2,0-4,1.8-4,4v20c0,2.2,1.8,4,4,4h32c2.2,0,4-1.8,4-4V16C44,13.8,42.2,12,40,12z"/></svg>
-            </li>
-          <li>
-            <svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 48 48" width="48px" height="48px"><path fill="#FFA000" d="M40,12H22l-4-4H8c-2.2,0-4,1.8-4,4v8h40v-4C44,13.8,42.2,12,40,12z"/><path fill="#FFCA28" d="M40,12H8c-2.2,0-4,1.8-4,4v20c0,2.2,1.8,4,4,4h32c2.2,0,4-1.8,4-4V16C44,13.8,42.2,12,40,12z"/></svg>
-            </li>
-            <li>
-            <svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 48 48" width="48px" height="48px"><path fill="#FFA000" d="M40,12H22l-4-4H8c-2.2,0-4,1.8-4,4v8h40v-4C44,13.8,42.2,12,40,12z"/><path fill="#FFCA28" d="M40,12H8c-2.2,0-4,1.8-4,4v20c0,2.2,1.8,4,4,4h32c2.2,0,4-1.8,4-4V16C44,13.8,42.2,12,40,12z"/></svg>
-            </li>
-            <li>
-            <svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 48 48" width="48px" height="48px"><path fill="#FFA000" d="M40,12H22l-4-4H8c-2.2,0-4,1.8-4,4v8h40v-4C44,13.8,42.2,12,40,12z"/><path fill="#FFCA28" d="M40,12H8c-2.2,0-4,1.8-4,4v20c0,2.2,1.8,4,4,4h32c2.2,0,4-1.8,4-4V16C44,13.8,42.2,12,40,12z"/></svg>
-            </li>
-            <li>
-            <svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 48 48" width="48px" height="48px"><path fill="#FFA000" d="M40,12H22l-4-4H8c-2.2,0-4,1.8-4,4v8h40v-4C44,13.8,42.2,12,40,12z"/><path fill="#FFCA28" d="M40,12H8c-2.2,0-4,1.8-4,4v20c0,2.2,1.8,4,4,4h32c2.2,0,4-1.8,4-4V16C44,13.8,42.2,12,40,12z"/></svg>
-            </li> */}
           </ul>
         </nav>
       </footer>

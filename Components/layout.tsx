@@ -36,7 +36,10 @@ const Layout: React.FC<Props> = ({ children, title }) => {
       <header className="h-full">
         <MenuBar />
       </header>
-      <main className="background-image h-screen" key={router.pathname}>
+      <main
+        className="background-image h-screen pb-[26px]"
+        key={router.pathname}
+      >
         {children}
       </main>
       <footer>

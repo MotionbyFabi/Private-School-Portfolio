@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Tooltip } from "@material-tailwind/react";
 import { useRouter } from "next/router";
 import { useAppStore } from "../Apps/createAppStore";
+import { useAppOpen } from "../Apps/createAppStore";
 
 const Index = () => {
   const router = useRouter();
@@ -13,7 +14,7 @@ const Index = () => {
     "Scripten",
     "Vrij Werk",
   ];
-/*   const [activeApp, setActiveApp] = useState("");
+  /*   const [activeApp, setActiveApp] = useState("");
   console.log(activeApp)
   useAppStore.setState({ appName: activeApp });
 
@@ -36,11 +37,15 @@ const Index = () => {
     }
   }; */
 
-  const [ appName, setAppName ] = useAppStore((state) => [state.appName, state.setAppName]);
+  const [appName, setAppName] = useAppStore((state) => [
+    state.appName,
+    state.setAppName,
+  ]);
+  const setOpen = useAppOpen((state) => state.setOpen);
   const handleClick = (DockItem: string) => {
-    setAppName(DockItem)
+    setAppName(DockItem);
+    setOpen(true);
   };
-    
 
   return (
     <>
@@ -48,7 +53,11 @@ const Index = () => {
         <nav className=" glass-background flex justify-center items-center flex-row space-x-4 px-5 py-1 ">
           <ul className=" flex flex-row space-x-4">
             {DockItems.map((DockItem) => (
-              <li className="cursor-pointer" onClick={() => handleClick(DockItem)} key={router.pathname}>
+              <li
+                className="cursor-pointer"
+                onClick={() => handleClick(DockItem)}
+                key={DockItem}
+              >
                 <Tooltip
                   className="glass-background-tooltip   text-black text-[16px] px-[8px] py-[2px]"
                   animate={{

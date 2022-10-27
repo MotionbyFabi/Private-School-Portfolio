@@ -2,12 +2,10 @@ import React from "react";
 import Layout from "../../layout";
 
 const index = () => {
-  const name = "grafische Vormgeving";
+  const name = "Grafische Vormgeving";
 
   return (
-    <Layout title={name}>
-      <h1>Hello</h1>
-    </Layout>
+      <h1>{name}</h1>
   );
 };
 

@@ -3,16 +3,22 @@ import Layout from "../layout";
 import { useAppMax, useAppStore } from "../createAppStore";
 
 const Animatie = () => {
-  const name = "Animatie";
-  const appName = useAppStore((state) => state.appName);
-  const max = useAppMax((state) => state.max);
 
   return (
-    <Layout title={appName}>
-      <div className={`rounded-b-lg h-full bg-white`}>
-        <h1>{appName}</h1>
-      </div>
-    </Layout>
+    <div className="grid grid-cols-2 p-2 place-content-center w-full gap-2">
+        <div className="w-full h-[100px] rounded-xl bg-black">
+
+        </div>
+        <div className="w-full h-[400px] rounded-xl bg-black">
+
+        </div>
+        <div className="w-full h-[200px] rounded-xl bg-black">
+
+        </div>
+        <div className="w-full h-[600px] rounded-xl bg-black">
+
+        </div>
+    </div>
   );
 };
 

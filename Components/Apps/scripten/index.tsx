@@ -5,9 +5,7 @@ const index = () => {
   const name = "Scripten";
 
   return (
-    <Layout title={name}>
-      <h1>Hello</h1>
-    </Layout>
+    <h1>{name}</h1>
   );
 };
 

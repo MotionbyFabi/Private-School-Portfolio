@@ -3,6 +3,7 @@ import Head from "next/head";
 import { useRouter } from "next/router";
 import MenuBar from "./MenuBar";
 import Dock from "./Dock";
+import LayoutApps from "./Apps/layout";
 
 interface Props {
   children?: React.ReactNode;

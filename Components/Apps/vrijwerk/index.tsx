@@ -2,10 +2,9 @@ import React from "react";
 import Layout from "../../layout";
 
 const index = () => {
+  const name = "Vrij Werk";
   return (
-    <Layout title="Vrij Werk">
-      <h1>Hello</h1>
-    </Layout>
+    <h1>{name}</h1>
   );
 };
 

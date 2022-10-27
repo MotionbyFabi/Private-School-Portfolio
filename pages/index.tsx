@@ -6,16 +6,14 @@ import Grafische from "./apps/grafischevormgeving";
 import InternetTech from "./apps/internettechnieken";
 import Script from "./apps/scripten";
 import Vrij from "./apps/vrijwerk";
+import ActiveApp from "../Components/Apps/activeApp";
 
 const Home: NextPage = () => {
+
+ 
   return (
     <Layout title="Fabio Di Nota Portfolio">
-      <Animatie />
-      <BeeldGeluid />
-      <Grafische />
-      <InternetTech />
-      <Script />
-      <Vrij />
+      <ActiveApp />
     </Layout>
   );
 };

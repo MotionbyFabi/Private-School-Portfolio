@@ -1,6 +1,4 @@
 import React from "react";
-import Layout from "../layout";
-import { useAppMax, useAppStore } from "../createAppStore";
 
 const Animatie = () => {
 

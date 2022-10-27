@@ -1,6 +1,6 @@
 import type { NextPage } from "next";
-import Layout from "../Components/layout";
-import ActiveApp from "../Components/Apps/activeApp";
+import Layout from "../components/layout";
+import ActiveApp from "../components/apps/activeApp";
 
 const Home: NextPage = () => {
 

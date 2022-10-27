@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import Logo from "../../public/github.svg";
-import { useAppMax, useAppOpen, useAppStore } from "../Apps/createAppStore";
+import { useAppMax, useAppOpen, useAppStore } from "../apps/createAppStore";
 import { format } from "date-fns";
 
 const Index = () => {

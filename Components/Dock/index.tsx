@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { Tooltip } from "@material-tailwind/react";
 import { useRouter } from "next/router";
-import { useAppStore } from "../Apps/createAppStore";
-import { useAppOpen } from "../Apps/createAppStore";
+import { useAppStore } from "../apps/createAppStore";
+import { useAppOpen } from "../apps/createAppStore";
 
 const Index = () => {
   const router = useRouter();

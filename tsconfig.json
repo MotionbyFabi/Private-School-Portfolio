@@ -19,7 +19,7 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
-    "Components/Apps/beeldengeluid"
+    "components/apps/beeldengeluid"
   ],
   "exclude": ["node_modules"]
 }

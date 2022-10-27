@@ -9,9 +9,7 @@ import Vrij from "./vrijwerk";
 import Animation from "./animatie";
 
 const Animatie = () => {
-  const name = "Animatie";
   const appName = useAppStore((state) => state.appName);
-  const max = useAppMax((state) => state.max);
 
   return (
     <Layout title={appName}>

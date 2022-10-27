@@ -39,6 +39,8 @@ const layout: React.FC<Props> = ({ children, title }) => {
   };
   console.log(max);
 
+  const position = max === true ? { x: 0, y: 0 } : undefined;
+
   return (
     <div
       className={`w-screen h-screen ${max ? "pt-0" : "pt-10"} transition-all duration-300 ease-in-out origin-bottom ${
@@ -49,7 +51,7 @@ const layout: React.FC<Props> = ({ children, title }) => {
         handle=".handle"
         grid={[2, 2]}
 
-        position={max === true ? { x: 0, y: 0 } : null}
+        position={position}
         bounds="parent"
       >
         <div className="inline-block">

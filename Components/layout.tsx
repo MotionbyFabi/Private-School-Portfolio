@@ -1,9 +1,9 @@
 import React from "react";
 import Head from "next/head";
 import { useRouter } from "next/router";
-import MenuBar from "./MenuBar";
-import Dock from "./Dock";
-import LayoutApps from "./Apps/layout";
+import MenuBar from "./menubar";
+import Dock from "./dock";
+import LayoutApps from "./apps/layout";
 
 interface Props {
   children?: React.ReactNode;

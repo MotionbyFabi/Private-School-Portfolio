@@ -27,7 +27,7 @@ const Layout: React.FC<Props> = ({ children, title }) => {
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="description" content="Portfolio site in MacOS Style" />
         <meta content="#01A678" data-react-helmet="true" name="theme-color" />
-        <meta property="og:url" content="https://azuritestudios.net/" />
+        <meta property="og:url" content="" />
         <meta property="og:type" content="website" />
         <meta property="og:title" content="MacOS Portfolio Kunstkaai" />
         <meta property="og:description" content="MacOS Portfolio" />

@@ -2,8 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Language: css */
-@layer components {
+@layer base{
   body {
     margin: 0;
     padding: 0;
@@ -12,6 +11,10 @@
     width: 100vw;
     overflow: hidden;
   }
+}
+
+@layer components {
+  
   .glass-background {
     background: rgba(255, 255, 255, 0.2);
     border-radius: 8px;

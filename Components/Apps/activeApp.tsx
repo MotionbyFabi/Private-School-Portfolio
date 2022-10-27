@@ -1,4 +1,3 @@
-
 import React from "react";
 import Layout from "./layout";
 import { useAppMax, useAppStore } from "./createAppStore";
@@ -10,25 +9,29 @@ import Vrij from "./vrijwerk";
 import Animation from "./animatie";
 
 const Animatie = () => {
-    const name = "Animatie";
-    const appName = useAppStore((state) => state.appName);
-    const max = useAppMax((state) => state.max);
+  const name = "Animatie";
+  const appName = useAppStore((state) => state.appName);
+  const max = useAppMax((state) => state.max);
 
-    return (
+  return (
     <Layout title={appName}>
-        <div className={`rounded-b-lg h-full bg-white overflow-scroll`}>
-                {
-            appName === "Finder" ? null : 
-            appName === "Animatie" ? <Animation /> : 
-            appName === "Beeld en Geluid" ? <BeeldGeluid /> : 
-            appName === "Grafische Vormgeving" ? <Grafische /> : 
-            appName === "Internet Technieken" ? <InternetTech /> : 
-            appName === "Scripten" ? <Script /> : 
-            appName === "Vrij Werk" ? <Vrij /> : null
-            }
-        </div>
+      <div className={`rounded-b-lg h-full bg-white overflow-scroll`}>
+        {appName === "Finder" ? null : appName === "Animatie" ? (
+          <Animation />
+        ) : appName === "Beeld en Geluid" ? (
+          <BeeldGeluid />
+        ) : appName === "Grafische Vormgeving" ? (
+          <Grafische />
+        ) : appName === "Internet Technieken" ? (
+          <InternetTech />
+        ) : appName === "Scripten" ? (
+          <Script />
+        ) : appName === "Vrij Werk" ? (
+          <Vrij />
+        ) : null}
+      </div>
     </Layout>
-    );
+  );
 };
 
 export default Animatie;

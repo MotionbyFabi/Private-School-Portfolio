@@ -14,28 +14,6 @@ const Index = () => {
     "Scripten",
     "Vrij Werk",
   ];
-  /*   const [activeApp, setActiveApp] = useState("");
-  console.log(activeApp)
-  useAppStore.setState({ appName: activeApp });
-
-  const handleActiveApp = (app: string) => {
-    switch (app) {
-      case "Animatie":
-        setActiveApp("Animatie");
-      case "Beeld en Geluid":
-        setActiveApp("Beeld en Geluid");
-      case "Grafische Vormgeving":
-        setActiveApp("Grafische Vormgeving");
-      case "Internet Technieken":
-        setActiveApp("Internet Technieken");
-      case "Scripten":
-        setActiveApp("Scripten");
-      case "Vrij Werk":
-        setActiveApp("Vrij Werk");
-        default:
-          setActiveApp("Finder");
-    }
-  }; */
 
   const [appName, setAppName] = useAppStore((state) => [
     state.appName,

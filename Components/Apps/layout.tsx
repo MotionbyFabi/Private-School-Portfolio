@@ -4,7 +4,6 @@ import Draggable from "react-draggable";
 import { useAppMax, useAppStore } from "./createAppStore";
 import { useAppOpen } from "./createAppStore";
 
-
 interface Props {
   children: React.ReactNode;
   title: string;
@@ -43,20 +42,23 @@ const layout: React.FC<Props> = ({ children, title }) => {
 
   return (
     <div
-      className={`w-screen h-screen ${max ? "pt-0" : "pt-10"} transition-all duration-300 ease-in-out origin-bottom ${
+      className={`w-screen h-screen ${
+        max ? "pt-0" : "pt-10"
+      } transition-all duration-300 ease-in-out origin-bottom ${
         open === false ? "scale-0" : "scale-100"
       }`}
     >
       <Draggable
         handle=".handle"
         grid={[2, 2]}
-
         position={position}
         bounds="parent"
       >
         <div className="inline-block">
           <nav
-            className={`${max ? "" : "handle"} cursor-pointer h-5 flex  items-center  bg-gray-300 transition-all duration-300  ${
+            className={`${
+              max ? "" : "handle"
+            } cursor-pointer h-5 flex  items-center  bg-gray-300 transition-all duration-300  ${
               max === true ? "w-screen " : "w-[854px]"
             } relative rounded-t-lg`}
           >
@@ -77,7 +79,9 @@ const layout: React.FC<Props> = ({ children, title }) => {
           </nav>
           <div
             className={`text-white rounded-b-lg transition-all duration-300 ${
-                max === true ? "w-screen h-[100vh] pb-[7.9em]" : "w-[854px] h-[480px] pb-[1.7em]"
+              max === true
+                ? "w-screen h-[100vh] pb-[7.9em]"
+                : "w-[854px] h-[480px] pb-[1.7em]"
             }`}
           >
             {children}
